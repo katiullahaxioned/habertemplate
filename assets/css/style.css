@@ -153,6 +153,11 @@ p {
   line-height: 1.5;
 }
 
+::placeholder {
+  text-transform: capitalize;
+  color: var(--clr-grey);
+}
+
 /* common styling ends here */
 
 /*for wrapper*/
@@ -609,16 +614,7 @@ nav a:hover {
 }
 
 .fresh-learning-cards > li {
-  /* padding: 50px 51px 40px; */
   flex-basis: 50%;
-}
-
-.fresh-learning-cards .fresh-card {
-}
-
-.fresh-learning-cards .learning-card {
-  /* padding: 3% 51px 40px 6.7%; */
-  /* background-color: var(--clr-grey3); */
 }
 
 .fresh-card ul,
@@ -738,6 +734,86 @@ nav a:hover {
 }
 
 /* client section ends here */
+
+/* quick contact section starts here */
+
+.quick-contact {
+  background: url(../images/contact.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.quick-contact .wrapper {
+  padding: 80px 0 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-contact .section-title {
+  margin-bottom: 44px;
+  color: var(--clr-white);
+  text-shadow: 1px 1px 0 var(--clr-grey3);
+}
+
+.quick-contact form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input-left {
+  flex-basis: 31.6%;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-right {
+  flex-basis: 65.8%;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--clr-grey1);
+  background-color: rgba(0,0,0,0.5);
+}
+
+.input-group textarea {
+  resize: none;
+  height: 100%;
+}
+
+.input-control {
+  margin-top: 13px;
+  flex: 1 0 100%;
+  text-align: right;
+}
+
+.input-control input {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 14px 28px;
+    border: none;
+    color: var(--clr-white);
+    background-color: var(--clr-primary);
+    transition: all 0.3s;
+  }
+  
+  .input-control input:hover {
+    background-color: var(--clr-grey3);
+  }
+
+
+/* quick contact section ends here */
 
 
 /*=================================
