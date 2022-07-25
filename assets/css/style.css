@@ -434,12 +434,39 @@ nav a:hover {
   padding: 20px;
 }
 
-.focus-cards figure,
-.focus-cards figure img {
+.focus-cards span {
   width: 69px;
   height: 69px;
   border-radius: 50%;
+  background-color: var(--clr-primary);
+  text-indent: -99999px;
+  position: relative;
+  color: var(--clr-white);
+  font-size: 27px;
 }
+
+.focus-cards span::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: 'fontAwesome';
+  text-indent: 0;
+  transform: translate(-50%, -50%);
+}
+
+.focus-cards .private-banking::before {
+  content: '\f2bb';
+}
+.focus-cards .time-saving::before {
+  content: '\f201';
+}
+.focus-cards .budgeting-tips::before {
+  content: '\f0f2';
+}
+.focus-cards .money-saving::before {
+  content: '\f1cd';
+}
+
 
 .focus-cards h3 {
   width: 48%;
@@ -544,26 +571,49 @@ nav a:hover {
 
 .fresh-learning .wrapper {
   width: 100%;
+  padding: 3.3% 3.7% 2.9%;
+  position: relative;
+}
+
+.fresh-learning .wrapper::before, 
+.fresh-learning .wrapper::after {
+  content: '';
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.fresh-learning .wrapper::before {
+  left: 0;
+  background-color: var(--clr-primary);
+}
+
+.fresh-learning .wrapper::after {
+  right: 0;
+  background-color: var(--clr-grey3);
 }
 
 .fresh-learning .fresh-learning-cards {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
 }
 
 .fresh-learning-cards > li {
-  padding: 50px 51px 40px;
+  /* padding: 50px 51px 40px; */
   flex-basis: 50%;
 }
 
 .fresh-learning-cards .fresh-card {
-  background-color: var(--clr-primary);
 }
 
 .fresh-learning-cards .learning-card {
-  padding: 50px 51px 40px 70px;
-  background-color: var(--clr-grey3);
+  /* padding: 3% 51px 40px 6.7%; */
+  /* background-color: var(--clr-grey3); */
 }
 
 .fresh-card ul,
@@ -572,17 +622,58 @@ nav a:hover {
   flex-direction: column;
   gap: 20px;
   color: var(--clr-grey1);
+  font-weight: 600;
+}
+
+.learning-card ul {
+  padding: 0 0 0 15%;
+}
+
+.fresh-card > ul li:nth-child(2)::before,
+.fresh-card > ul li:nth-child(4)::before,
+.fresh-card > ul li:nth-child(5)::before,
+.fresh-card > ul li:nth-child(6)::before,
+.learning-card > ul li:nth-child(2)::before,
+.learning-card > ul li:nth-child(3)::before,
+.learning-card > ul li:nth-child(4)::before {
+  content: '\f013';
+  margin-right: 20px;
+  font-family: 'fontAwesome';
+  text-indent: 0;
+  color: var(--clr-white);
 }
 
 .fresh-card ul {
   color: var(--clr-white);
+  align-content: flex-start;
 }
 
 .fresh-card ul li:first-child,
 .learning-card ul li:first-child {
+  margin-bottom: 8px;
   font-size: 32px;
   font-weight: 600;
   color: var(--clr-white);
+}
+
+.fresh-learning-cards > li .button {
+  padding: 14px 15px;
+  margin-top: 20px;
+  border: 2px solid var(--clr-white);
+  color: var(--clr-white);
+}
+
+.fresh-card .button:hover {
+  background-color: var(--clr-grey3);
+  border-color: var(--clr-grey3);
+}
+
+.learning-card .button:hover {
+  border-color: var(--clr-primary);
+}
+
+.learning-card > ul li:nth-child(5) {
+  line-height: 1.5;
 }
 
 /* fresh-learning section ends here */
