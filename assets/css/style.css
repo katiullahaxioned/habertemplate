@@ -385,6 +385,11 @@ nav a:hover {
   position: absolute;
   top: 0;
   transform: translatex(-50%);
+  transition: all 0.3s;
+}
+
+.banner-content .control:hover::before {
+  border-color: var(--clr-grey3);
 }
 
 .banner-content .prev::before {
@@ -677,6 +682,63 @@ nav a:hover {
 }
 
 /* fresh-learning section ends here */
+
+/* client section starts here */
+
+.client .wrapper {
+  width: 100%;
+  padding: 63px 40px 58px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.client .client-cards {
+  width: 95%;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.client .prev {order: 1;}
+.client .next {order: 3;}
+
+.client .control {
+  position: relative;
+  text-indent: -99999px;
+  cursor: pointer;
+}
+
+.client .control::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-left: 3px solid var(--clr-grey3);
+  border-bottom: 3px solid var(--clr-grey3);
+  position: absolute;
+  top: 0;
+  transform: translatex(-50%);
+  transition: all 0.3s;
+}
+
+.client .control:hover::before {
+  border-color: var(--clr-primary);
+}
+
+.client .prev::before {
+  transform: rotate(45deg);
+  left: 50%;
+}
+
+.client .next::before {
+  right: 50%;
+  transform: rotate(225deg);
+}
+
+/* client section ends here */
+
 
 /*=================================
   main styling ends here
