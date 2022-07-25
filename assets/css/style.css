@@ -540,8 +540,52 @@ nav a:hover {
 
 /* advice section ends here */
 
+/* fresh-learning section starts here */
 
+.fresh-learning .wrapper {
+  width: 100%;
+}
 
+.fresh-learning .fresh-learning-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fresh-learning-cards > li {
+  padding: 50px 51px 40px;
+  flex-basis: 50%;
+}
+
+.fresh-learning-cards .fresh-card {
+  background-color: var(--clr-primary);
+}
+
+.fresh-learning-cards .learning-card {
+  padding: 50px 51px 40px 70px;
+  background-color: var(--clr-grey3);
+}
+
+.fresh-card ul,
+.learning-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--clr-grey1);
+}
+
+.fresh-card ul {
+  color: var(--clr-white);
+}
+
+.fresh-card ul li:first-child,
+.learning-card ul li:first-child {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--clr-white);
+}
+
+/* fresh-learning section ends here */
 
 /*=================================
   main styling ends here
