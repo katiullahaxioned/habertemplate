@@ -815,6 +815,56 @@ nav a:hover {
 
 /* quick contact section ends here */
 
+/* company contact section starts here */
+
+.company-contact {
+  background-color: var(--clr-grey2);
+}
+
+.company-contact .wrapper {
+  padding: 101px 0;
+}
+
+.company-contact-cards {
+  display: flex;
+  align-items: center;
+}
+
+.company-contact-cards span {
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  text-indent: -99999px;
+  position: relative;
+  color: var(--clr-white);
+  font-size: 36px;
+  box-shadow: 0 0 0 10px var(--clr-grey1);
+}
+
+.company-contact-cards span::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: 'fontAwesome';
+  text-indent: 0;
+  transform: translate(-50%, -50%);
+  background-color: var(--clr-primary);
+}
+
+.company-contact-cards li:nth-child(1) span::before {
+  content: '\f041';
+}
+.company-contact-cards li:nth-child(2) span::before {
+  content: '\f0e0';
+}
+.company-contact-cards li:nth-child(3) span::before {
+  content: '\f095';
+}
+
+
+/* company contact section ends here */
+
 
 /*=================================
   main styling ends here
