@@ -128,6 +128,26 @@ textarea {
   outline: none;
 }
 
+::first-letter {
+  text-transform: uppercase;
+}
+
+.button {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 14px 12px;
+  border: 1px solid var(--clr-grey1);
+  color: var(--clr-grey3);
+  border-radius: 2px;
+}
+
+.button:hover {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border-color: var(--clr-primary);
+}
+
 /* common styling ends here */
 
 /*for wrapper*/
@@ -374,6 +394,65 @@ nav a:hover {
 
 /* banner styling ends here */
 
+/* our-focus section starts here */
+
+.our-focus .wrapper {
+  padding: 91px 0 63px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 33px;
+  transform: scaleY(1.3);
+  color: var(--clr-grey3);
+}
+
+.focus-cards {
+  width: 100%;
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.focus-cards li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.focus-cards figure,
+.focus-cards figure img {
+  width: 69px;
+  height: 69px;
+  border-radius: 50%;
+}
+
+.focus-cards h3 {
+  width: 48%;
+  margin: 25px 0 28px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--clr-grey3);
+}
+
+.focus-cards p {
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--clr-grey1);
+}
+
+/* our-focus section ends here */
 
 
 
