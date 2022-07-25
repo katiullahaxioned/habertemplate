@@ -110,6 +110,7 @@ li {
 
 :root {
   --clr-primary: #dc6226;
+  --clr-grey: #eaeff5;
   --clr-grey1: #808c94;
   --clr-grey2: #525c64;
   --clr-grey3: #424b50;
@@ -146,6 +147,10 @@ textarea {
   background-color: var(--clr-primary);
   color: var(--clr-white);
   border-color: var(--clr-primary);
+}
+
+p {
+  line-height: 1.5;
 }
 
 /* common styling ends here */
@@ -448,11 +453,93 @@ nav a:hover {
 .focus-cards p {
   margin-bottom: 20px;
   font-size: 13px;
-  line-height: 1.5;
   color: var(--clr-grey1);
 }
 
 /* our-focus section ends here */
+
+/* advice section starts here */
+
+.advice {
+  background-color: var(--clr-grey);
+}
+
+.advice .wrapper {
+  padding: 92px 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.advice .section-para {
+  margin: 27px 0 50px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.advice-cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.advice-cards li {
+  background-color: var(--clr-white);
+}
+
+.advice-cards figure {
+  width: 100%;
+  padding: 11px;
+}
+
+.advice-card-content {
+  padding: 31px 40px 37px;
+}
+
+.advice-card-content h3 {
+  font-size: 27px;
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+.advice-card-content p {
+  margin: 7px 0 16px;
+  font-size: 13px;
+  color: var(--clr-grey1);
+}
+
+.advice-card-content a {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  text-indent: -99999px;
+  color: var(--clr-grey3);
+  font-size: 14px;
+  border: 3px solid var(--clr-grey3);
+  border-radius: 50%;
+}
+
+.advice-card-content a::before {
+  content: '\f061';
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'fontAwesome';
+  text-indent: 0;
+}
+
+.advice-card-content a:hover {
+  color: var(--clr-primary);
+  border-color: var(--clr-primary);
+}
+
+/* advice section ends here */
+
 
 
 
