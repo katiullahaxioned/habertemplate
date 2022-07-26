@@ -162,7 +162,7 @@ p {
 
 /*for wrapper*/
 .wrapper {
-  max-width: 1360px;
+  max-width: 1370px;
   width: 92.5%; 
   margin: 0 auto;
 }
@@ -519,13 +519,15 @@ nav a:hover {
 .advice-cards {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .advice-cards li {
   background-color: var(--clr-white);
+  flex-basis: 31.55%;
+  box-shadow: 0 0 8px var(--clr-grey1);
 }
 
 .advice-cards figure {
@@ -579,14 +581,17 @@ nav a:hover {
 
 /* fresh-learning section starts here */
 
-.fresh-learning .wrapper {
-  width: 100%;
-  padding: 3.3% 3.7% 2.9%;
+.fresh-learning {
   position: relative;
 }
 
-.fresh-learning .wrapper::before, 
-.fresh-learning .wrapper::after {
+.fresh-learning .wrapper {
+  padding: 45px 0 40px;
+  position: relative;
+}
+
+.fresh-learning:before, 
+.fresh-learning::after {
   content: '';
   width: 50%;
   height: 100%;
@@ -595,12 +600,12 @@ nav a:hover {
   z-index: 1;
 }
 
-.fresh-learning .wrapper::before {
+.fresh-learning::before {
   left: 0;
   background-color: var(--clr-primary);
 }
 
-.fresh-learning .wrapper::after {
+.fresh-learning::after {
   right: 0;
   background-color: var(--clr-grey3);
 }
@@ -609,6 +614,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   position: relative;
   z-index: 2;
 }
@@ -659,9 +665,13 @@ nav a:hover {
 
 .fresh-learning-cards > li .button {
   padding: 14px 15px;
-  margin-top: 20px;
+  margin-top: 5px;
   border: 2px solid var(--clr-white);
   color: var(--clr-white);
+}
+
+.fresh-card li .button {
+  margin-top: 21px;
 }
 
 .fresh-card .button:hover {
@@ -828,21 +838,31 @@ nav a:hover {
 .company-contact-cards {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 55px;
 }
 
-.company-contact-cards span {
+.company-contact-cards li {
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.company-contact-cards .contact-icon {
   width: 73px;
   height: 73px;
   border-radius: 50%;
+  flex-shrink: 0;
   background-color: var(--clr-primary);
   text-indent: -99999px;
   position: relative;
-  color: var(--clr-white);
   font-size: 36px;
+  color: var(--clr-white);
   box-shadow: 0 0 0 10px var(--clr-grey1);
+  margin-right: 25px;
 }
 
-.company-contact-cards span::before {
+.company-contact-cards .contact-icon::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -852,14 +872,26 @@ nav a:hover {
   background-color: var(--clr-primary);
 }
 
-.company-contact-cards li:nth-child(1) span::before {
+.company-contact-cards li:nth-child(1) .contact-icon::before{
   content: '\f041';
 }
-.company-contact-cards li:nth-child(2) span::before {
+.company-contact-cards li:nth-child(2) .contact-icon::before {
   content: '\f0e0';
 }
-.company-contact-cards li:nth-child(3) span::before {
+.company-contact-cards li:nth-child(3) .contact-icon::before {
   content: '\f095';
+}
+
+.company-contact-cards span:not(.contact-icon),
+.company-contact-cards a {
+  color: var(--clr-white);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.company-contact-cards li:last-child a {
+  font-size: 21px;
 }
 
 
