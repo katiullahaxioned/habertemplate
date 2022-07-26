@@ -160,6 +160,13 @@ p {
   text-transform: uppercase;
 }
 
+.section-para {
+  margin: 27px 0 50px;
+  color: var(--clr-grey3);
+  font-size: 18px;
+  font-weight: 600;
+}
+
 /* banner section and client section common property starts here */
 
 .client .prev,
@@ -388,7 +395,7 @@ nav a[title='About']::before {
   main styling starts here
 =================================*/
 
-/* banner styling starts here */
+/* banner section styling starts here */
 
 .banner .wrapper {
   width: 100%;
@@ -444,7 +451,7 @@ nav a[title='About']::before {
   border-left: 5px solid var(--clr-white);
 }
 
-/* banner styling ends here */
+/* banner section styling ends here */
 
 /* our-focus section starts here */
 
@@ -537,13 +544,6 @@ nav a[title='About']::before {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-}
-
-.advice .section-para {
-  margin: 27px 0 50px;
-  color: var(--clr-grey3);
-  font-size: 18px;
-  font-weight: 600;
 }
 
 .advice-cards {
@@ -1024,6 +1024,10 @@ footer .wrapper {
     width: 95%;
   }
 
+  .section-para {
+    font-size: 16px;
+  }
+
   /* Header styling starts here */
 
   header a[title='Haber'] {
@@ -1040,7 +1044,7 @@ footer .wrapper {
 
   /* Header styling ends here */
 
-  /* banner styling starts here */
+  /* banner section styling starts here */
 
   .banner .wrapper {
     height: 85vh;
@@ -1055,7 +1059,7 @@ footer .wrapper {
     flex-basis: 88%;
   }
 
-  /* banner styling ends here */
+  /* banner section styling ends here */
 
   /* our-focus section starts here */
 
@@ -1072,14 +1076,6 @@ footer .wrapper {
   }
 
   /* our-focus section ends here */
-
-  /* advice section starts here */
-
-  .advice .section-para {
-    font-size: 16px;
-  }
-
-  /* advice section ends here */
 
   /* fresh-learning section starts here */
 
@@ -1143,6 +1139,11 @@ footer .wrapper {
 
   .section-title {
     font-size: 23px;
+  }
+
+  .section-para {
+    margin: 27px 0;
+    font-size: 15px;
   }
 
   /* Header styling starts here */
@@ -1222,7 +1223,7 @@ footer .wrapper {
 
   /* Header styling ends here */
 
-  /* banner styling starts here */
+  /* banner section styling starts here */
 
   .banner .wrapper {
     height: 89vh;
@@ -1233,7 +1234,7 @@ footer .wrapper {
     padding: 15px;
   }
 
-  /* banner styling ends here */
+  /* banner section styling ends here */
 
   /* our-focus section starts here */
 
@@ -1244,7 +1245,7 @@ footer .wrapper {
   }
   
   .focus-cards li {
-    flex-basis: 46%;
+    flex-basis: 90%;
   }
 
   .focus-cards h3 {
@@ -1258,11 +1259,6 @@ footer .wrapper {
   .advice-cards {
     justify-content: center;
     gap: 20px;
-  }
-
-  .advice .section-para {
-    margin: 27px 0;
-    font-size: 15px;
   }
 
   .advice-cards li {
@@ -1298,6 +1294,11 @@ footer .wrapper {
   .fresh-learning-cards > li {
     padding: 40px 0;
     flex-basis: 100%;
+  }
+
+  .fresh-card ul li:first-child,
+  .learning-card ul li:first-child {
+    font-size: 23px;
   }
 
   .learning-card ul {
@@ -1375,6 +1376,40 @@ footer .wrapper {
       margin: 0;
   }
 
+  .footer-left p a {
+    font-size: 22px;
+  }
+
   /* footer styling ends here */
 
 }  
+
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .section-para {
+    font-size: 14px;
+  }
+
+  /* banner section styling starts here */
+
+  .banner-content {
+    width: 90%;
+  }
+
+  .banner-content ul li {
+    font-size: calc(1vw + 14px);
+  }
+
+  .banner-content .control::before {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* banner section styling ends here */
+
+}
