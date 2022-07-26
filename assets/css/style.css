@@ -325,13 +325,14 @@ nav a[title='About']::before {
   position: relative;
   cursor: pointer;
 }
+
 .menu-toggle .bar {
   width: 100%;
   height: 4px;
   border-radius: 4px;
   position: relative;
   transition: all 0.3s;
-  background-color: var(--clr-primary);
+  background-color: var(--clr-white);
   text-indent: -99999px;
 }
 
@@ -948,6 +949,10 @@ footer .wrapper {
   overflow: hidden;
 }
 
+.footer-right a {
+  width: 100%;
+}
+
 .footer-right img {
   transition: all 0.3s;
 }
@@ -1031,10 +1036,6 @@ footer .wrapper {
 
   .header-social {
     gap: 9px;
-  }
-
-  .header-social li a {
-    font-size: 22px;
   }
 
   /* Header styling ends here */
@@ -1129,9 +1130,251 @@ footer .wrapper {
 
 }
 
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
+/*media query for 767px starts here*/
+@media only screen and (max-width: 767px) {
 
+  .our-focus .wrapper,
+  .advice .wrapper,
+  .quick-contact .wrapper,
+  .company-contact .wrapper,
+  footer .wrapper {
+    padding: 60px 0;
+  }
 
+  .section-title {
+    font-size: 23px;
+  }
+
+  /* Header styling starts here */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: var(--clr-grey3);
+  }
+
+  header a[title='Haber'] {
+    padding: 10px;
+    z-index: 5;
+  }
+
+  header nav {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 4;
+    transition: all 0.3s;
+    background-color: var(--clr-grey3);
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 20px 0;
+    display: block;
+  }
+
+  nav li:first-child a {
+    color: var(--clr-white);
+  }
+
+  nav ul a {
+    margin-right: 0;
+    font-size: 24px;
+  }
+
+  nav a[title='About']::before {
+    border-top-color: transparent;
+    border-left-color: var(--clr-primary);
+    position: absolute;
+    bottom: 20%;
+    left: 110%;
+    transform: translatey(-50%);
+  }
+
+  .header-social {
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    z-index: 3;
+    transform: translateY(-50%);
+  }
+
+  .header-social li a {
+    color: var(--clr-white);
+    text-shadow: 0 0 3px var(--clr-primary);
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 5;
+  }
+
+  .menu-toggle:hover ~ nav {
+    left: 0;
+  }
+
+  /* Header styling ends here */
+
+  /* banner styling starts here */
+
+  .banner .wrapper {
+    height: 89vh;
+  }
+
+  .banner-content {
+    width: 80%;
+    padding: 15px;
+  }
+
+  /* banner styling ends here */
+
+  /* our-focus section starts here */
+
+  .focus-cards {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .focus-cards li {
+    flex-basis: 46%;
+  }
+
+  .focus-cards h3 {
+    width: 100%;
+  }
+
+  /* our-focus section ends here */
+
+  /* advice section starts here */
+
+  .advice-cards {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .advice .section-para {
+    margin: 27px 0;
+    font-size: 15px;
+  }
+
+  .advice-cards li {
+    flex-basis: 90%;
+  }
+
+  .advice-card-content {
+    padding: 11px;
+  }
+
+  /* advice section ends here */
+
+  /* fresh-learning section starts here */
+
+  .fresh-learning .wrapper {
+    padding: 20px 0;
+  }
+
+  .fresh-learning:before, 
+  .fresh-learning::after {
+    width: 100%;
+    height: 50%;
+  }
+  .fresh-learning::before {
+    left: 0;
+  }
+
+  .fresh-learning::after {
+    top: 50%;
+    right: 0;
+  }
+
+  .fresh-learning-cards > li {
+    padding: 40px 0;
+    flex-basis: 100%;
+  }
+
+  .learning-card ul {
+    padding: 0;
+  }
+
+  .fresh-card li .button {
+    margin-top: 9px;
+  }
+
+  /* fresh-learning section ends here */
+
+  /* client section starts here */
+
+  .client .wrapper {
+    width: 95%;
+    padding: 60px 0;
+  }
+
+  /* client section ends here */
+
+  /* quick contact section starts here */
+
+  .quick-contact form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 17px;
+  }
+
+  .input-left,
+  .input-right {
+    flex-basis: 100%;
+  }
+
+  .input-right {
+    min-height: 100px;
+  }
+
+  .input-control {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  /* quick contact section ends here */
+
+  /* company contact section starts here */
+
+  .company-contact-cards {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .company-contact-cards li {
+    flex-basis: 100%;
+  }
+
+  /* company contact section ends here */
+
+  /* footer styling starts here */
+
+  footer .wrapper {
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .footer-left p,
+  .footer-right {
+    flex-basis: 100%;
+  }
+
+  .footer-left p {
+      margin: 0;
+  }
+
+  /* footer styling ends here */
 
 }  
