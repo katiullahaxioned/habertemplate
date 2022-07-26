@@ -169,16 +169,6 @@ p {
 
 /* banner section and client section common property starts here */
 
-.client .prev,
-.banner-content .prev {
-  order: 1;
-}
-
-.client .next,
-.banner-content .next {
-  order: 3;
-}
-
 .client .control,
 .banner-content .control {
   position: relative;
@@ -286,42 +276,67 @@ header nav {
   flex-basis: 53%;
 }
 
-header a[title='Haber'] {
-  height: 100%;
-  padding: 29px 55px 29px 25px;
-  background-color: var(--clr-primary);
+nav .nav-menu,
+.nav-menu .menu-list {
+  position: relative;
 }
 
-header a[title='Haber'] img {
-  transition: all 0.3s;
+nav .menu-list {
+  margin-right: 31px;
 }
 
 nav a {
-  margin-right: 31px;
   color: var(--clr-white);
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-nav li:first-child a {
-  color: var(--clr-primary);
+.menu-list .sub-menu {
+  width: 100px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 4;
+  opacity: 0;
+  transition: all .3s;
+  background-color: var(--clr-grey3);
 }
 
-nav a[title='About'] {
-  position: relative;
+.sub-menu li {
+  padding: 5px;
+  display: block;
 }
 
-nav a[title='About']::before {
+nav a[title='About']::before,
+.sub-menu::before {
   content: '';
   width: 0;
   height: 0;
   border: 4px solid transparent;
-  border-top-color: var(--clr-primary);
   position: absolute;
+}
+
+nav a[title='About']::before {
+  border-top-color: var(--clr-primary);
   bottom: -70%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.sub-menu::before {
+  border-bottom-color: var(--clr-primary);
+  top: -10%;
+  left: 20%;
+}
+
+.menu-list:hover .sub-menu {
+  opacity: 1;
+  transform: translateY(-30px);
+}
+
+nav .menu-list:first-child a {
+  color: var(--clr-primary);
 }
 
 .menu-toggle {
@@ -428,7 +443,6 @@ nav a[title='About']::before {
 }
 
 .banner-content ul {
-  order: 2;
   flex-basis: 68%;
 }
 
@@ -649,24 +663,25 @@ nav a[title='About']::before {
 
 .fresh-card ul,
 .learning-card ul {
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 23px;
   color: var(--clr-grey1);
   font-weight: 600;
 }
 
-.learning-card ul {
-  padding: 0 0 0 15%;
+.learning-card {
+  padding: 0 0 0 7.4%;
 }
 
-.fresh-card > ul li:nth-child(2)::before,
+.fresh-card > ul li:nth-child(1)::before,
+.fresh-card > ul li:nth-child(3)::before,
 .fresh-card > ul li:nth-child(4)::before,
 .fresh-card > ul li:nth-child(5)::before,
-.fresh-card > ul li:nth-child(6)::before,
+.learning-card > ul li:nth-child(1)::before,
 .learning-card > ul li:nth-child(2)::before,
-.learning-card > ul li:nth-child(3)::before,
-.learning-card > ul li:nth-child(4)::before {
+.learning-card > ul li:nth-child(3)::before {
   content: '\f013';
   margin-right: 20px;
   color: var(--clr-white);
@@ -675,16 +690,19 @@ nav a[title='About']::before {
 }
 
 .fresh-card ul {
-  align-content: flex-start;
   color: var(--clr-white);
 }
 
-.fresh-card ul li:first-child,
-.learning-card ul li:first-child {
-  margin-bottom: 8px;
+.fresh-card h3,
+.learning-card h3 {
+  margin-bottom: 35px;
   color: var(--clr-white);
   font-size: 32px;
   font-weight: 600;
+}
+
+.learning-card > ul li:last-child {
+  line-height: 1.5;
 }
 
 .fresh-learning-cards > li .button {
@@ -694,12 +712,8 @@ nav a[title='About']::before {
   color: var(--clr-white);
 }
 
-.fresh-card li .button {
+.fresh-card .button-div .button {
   margin-top: 21px;
-}
-
-.learning-card > ul li:nth-child(5) {
-  line-height: 1.5;
 }
 
 /* fresh-learning section ends here */
@@ -716,7 +730,6 @@ nav a[title='About']::before {
 
 .client .client-cards {
   width: 95%;
-  order: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -918,18 +931,13 @@ footer .wrapper {
   justify-content: space-between;
 }
 
-.footer-left p {
-  margin: 22px 0 9px;
+.footer-left .footer-left-content {
+  margin: 35px 0 21px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
   color: var(--clr-white);
   font-size: 13px;
-}
-
-.footer-left p a {
-  margin-right: 2px;
-  color: var(--clr-white);
-  font-size: 32px;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .footer-social {
@@ -940,21 +948,19 @@ footer .wrapper {
   width: 30px;
   height: 30px;
   color: var(--clr-primary);
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .footer-social li:nth-child(1) a::before { content: '\f2ad'; }
 
 .footer-right {
-  overflow: hidden;
+  height: 214px;
+  flex-basis: 48.6%;
 }
 
-.footer-right a {
+.footer-right iframe {
   width: 100%;
-}
-
-.footer-right img {
-  transition: all 0.3s;
+  height: 100%;
 }
 
  /*=================================
@@ -972,14 +978,8 @@ footer .wrapper {
     color: var(--clr-white);
   }
 
-  header a[title='Haber']:hover img,
-  .footer-right a:hover img {
-    transform: scale(1.1);
-  }
-
   nav a:hover,
-  .header-social a:hover::before,
-  .footer-left p a:hover {
+  .header-social a:hover::before {
     color: var(--clr-primary);
   }
 
@@ -1030,11 +1030,11 @@ footer .wrapper {
 
   /* Header styling starts here */
 
-  header a[title='Haber'] {
-    padding: 20px;
+  header h1 {
+    width: 180px;
   }
 
-  nav a {
+  nav .menu-list {
     margin-right: 15px;
   }
 
@@ -1047,7 +1047,7 @@ footer .wrapper {
   /* banner section styling starts here */
 
   .banner .wrapper {
-    height: 85vh;
+    height: 86.9vh;
   }
 
   .banner-content {
@@ -1079,12 +1079,12 @@ footer .wrapper {
 
   /* fresh-learning section starts here */
 
-  .learning-card ul {
-    padding: 0 0 0 6%;
+  .learning-card {
+    padding: 0 0 0 4%;
   }
 
-  .fresh-card li .button {
-    margin-top: 45px;
+  .fresh-card .button-div .button {
+    margin-top: 60px;
   }
 
   /* fresh-learning section ends here */
@@ -1155,8 +1155,8 @@ footer .wrapper {
     background-color: var(--clr-grey3);
   }
 
-  header a[title='Haber'] {
-    padding: 10px;
+  header h1 {
+    width: 120px;
     z-index: 5;
   }
 
@@ -1184,8 +1184,11 @@ footer .wrapper {
     color: var(--clr-white);
   }
 
-  nav ul a {
+  nav .menu-list {
     margin-right: 0;
+  }
+
+  nav ul a {
     font-size: 24px;
   }
 
@@ -1199,17 +1202,19 @@ footer .wrapper {
   }
 
   .header-social {
+    padding: 4px;
+    border-radius: 5px;
     flex-direction: column;
     position: fixed;
     top: 50%;
     right: 10px;
     z-index: 3;
     transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.7);
   }
 
-  .header-social li a {
+  nav .menu-list:first-child a {
     color: var(--clr-white);
-    text-shadow: 0 0 3px var(--clr-primary);
   }
 
   .menu-toggle {
@@ -1226,7 +1231,7 @@ footer .wrapper {
   /* banner section styling starts here */
 
   .banner .wrapper {
-    height: 89vh;
+    height: 92vh;
   }
 
   .banner-content {
@@ -1245,7 +1250,12 @@ footer .wrapper {
   }
   
   .focus-cards li {
+    padding: 25px 0;
     flex-basis: 90%;
+  }
+
+  .focus-cards li:not(:last-child) {
+    border-bottom: 2px solid var(--clr-grey3);
   }
 
   .focus-cards h3 {
@@ -1296,16 +1306,16 @@ footer .wrapper {
     flex-basis: 100%;
   }
 
-  .fresh-card ul li:first-child,
-  .learning-card ul li:first-child {
-    font-size: 23px;
+  .fresh-card h3,
+  .learning-card h3 {
+    font-size: 26px;
   }
 
-  .learning-card ul {
+  .learning-card {
     padding: 0;
   }
 
-  .fresh-card li .button {
+  .fresh-card .button-div .button {
     margin-top: 9px;
   }
 
@@ -1364,20 +1374,16 @@ footer .wrapper {
 
   footer .wrapper {
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
   }
 
-  .footer-left p,
+  .footer-left .footer-left-content,
   .footer-right {
     flex-basis: 100%;
   }
 
-  .footer-left p {
-      margin: 0;
-  }
-
-  .footer-left p a {
-    font-size: 22px;
+  .footer-left .footer-left-content {
+      margin: 0 0 21px;
   }
 
   /* footer styling ends here */
