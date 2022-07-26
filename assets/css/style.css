@@ -832,7 +832,7 @@ nav a:hover {
 }
 
 .company-contact .wrapper {
-  padding: 101px 0;
+  padding: 112px 0;
 }
 
 .company-contact-cards {
@@ -890,8 +890,18 @@ nav a:hover {
   font-size: 17px;
 }
 
-.company-contact-cards li:last-child a {
-  font-size: 21px;
+.company-contact-cards a:hover {
+  color: var(--clr-primary);
+  text-decoration: underline;
+}
+
+.company-contact-cards .phone-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-content a {
+  font-size: 22px;
 }
 
 
