@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @charset "utf-8";
 /* ==========================================================================
    1. CSS Reset Code
@@ -181,6 +188,8 @@ body {
 a {
   display: inline-block;
   text-decoration: none; 
+  -webkit-transition: all .3s; 
+  -o-transition: all .3s; 
   transition: all .3s;
 }
 
@@ -295,6 +304,8 @@ p { line-height: 1.5; }
   -webkit-transform: translatex(-50%);
   -ms-transform: translatex(-50%);
   transform: translatex(-50%);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
 }
 
@@ -339,6 +350,8 @@ p { line-height: 1.5; }
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
   font-family: 'fontAwesome';
   text-indent: 0;
@@ -427,6 +440,8 @@ nav a {
   left: 0;
   z-index: 4;
   opacity: 0;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
   background-color: var(--clr-grey3);
 }
@@ -463,7 +478,9 @@ nav a[title='About']::before {
 .menu-list > a:hover ~ .sub-menu {
   visibility: visible;
   opacity: 1;
-  transform: translateY(-30px);
+  -webkit-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+          transform: translateY(-30px);
 }
 
 nav .menu-list:first-child a {
@@ -484,6 +501,8 @@ nav .menu-list:first-child a {
   height: 4px;
   border-radius: 4px;
   position: relative;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
   background-color: var(--clr-white);
   text-indent: -99999px;
@@ -497,6 +516,8 @@ nav .menu-list:first-child a {
   border-radius: inherit;
   position: absolute;
   left: 0;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
   background-color: inherit;
 }
@@ -578,7 +599,8 @@ nav .menu-list:first-child a {
 }
 
 .banner-content ul {
-  flex-basis: 68%;
+  -ms-flex-preferred-size: 68%;
+      flex-basis: 68%;
 }
 
 .banner-content ul li {
@@ -833,6 +855,8 @@ nav .menu-list:first-child a {
 .fresh-card ul,
 .learning-card ul {
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -908,6 +932,8 @@ nav .menu-list:first-child a {
 
 .client .client-cards {
   width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1026,6 +1052,8 @@ nav .menu-list:first-child a {
 .input-control input {
   padding: 14px 28px;
   border: none;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
   background-color: var(--clr-primary);
   color: var(--clr-white);
@@ -1150,8 +1178,12 @@ footer .wrapper {
 
 .footer-left .footer-left-content {
   margin: 35px 0 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   gap: 4px;
   color: var(--clr-white);
   font-size: 13px;
@@ -1172,7 +1204,8 @@ footer .wrapper {
 
 .footer-right {
   height: 214px;
-  flex-basis: 48.6%;
+  -ms-flex-preferred-size: 48.6%;
+      flex-basis: 48.6%;
 }
 
 .footer-right iframe {
@@ -1371,6 +1404,8 @@ footer .wrapper {
     top: 0;
     left: -100%;
     z-index: 4;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
     transition: all .3s;
     background-color: var(--clr-grey3);
     text-align: center;
@@ -1405,7 +1440,10 @@ footer .wrapper {
   .header-social {
     padding: 4px;
     border-radius: 5px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: fixed;
     top: 50%;
     right: 10px;
@@ -1455,7 +1493,8 @@ footer .wrapper {
 
   .focus-cards li {
     padding: 25px 0;
-    flex-basis: 90%;
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
   }
 
   .focus-cards li:not(:last-child) {
