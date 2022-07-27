@@ -180,10 +180,8 @@ body {
 
 a {
   display: inline-block;
-  text-decoration: none;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  text-decoration: none; 
+  transition: all .3s;
 }
 
 li {
@@ -281,20 +279,6 @@ p { line-height: 1.5; }
 
 /* banner section and client section common property starts here */
 
-.client .prev,
-.banner-content .prev {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
-}
-
-.client .next,
-.banner-content .next {
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
-  order: 3;
-}
-
 .client .control,
 .banner-content .control {
   position: relative;
@@ -311,9 +295,7 @@ p { line-height: 1.5; }
   -webkit-transform: translatex(-50%);
   -ms-transform: translatex(-50%);
   transform: translatex(-50%);
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .client .prev::before,
@@ -357,9 +339,7 @@ p { line-height: 1.5; }
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all .3s;
   font-family: 'fontAwesome';
   text-indent: 0;
 }
@@ -423,41 +403,71 @@ header nav {
   flex-basis: 53%;
 }
 
-header a[title='Haber'] {
-  height: 100%;
-  padding: 29px 55px 29px 25px;
-  background-color: var(--clr-primary);
+nav .nav-menu,
+.nav-menu .menu-list {
+  position: relative;
 }
 
-header a[title='Haber'] img {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+nav .menu-list {
+  margin-right: 31px;
 }
 
 nav a {
-  margin-right: 31px;
   color: var(--clr-white);
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-nav li:first-child a { color: var(--clr-primary); }
-nav a[title='About'] { position: relative; }
+.menu-list .sub-menu {
+  width: 100px;
+  visibility: hidden;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 4;
+  opacity: 0;
+  transition: all .3s;
+  background-color: var(--clr-grey3);
+}
 
-nav a[title='About']::before {
+.sub-menu li {
+  padding: 5px;
+  display: block;
+}
+
+nav a[title='About']::before,
+.sub-menu::before {
   content: '';
   width: 0;
   height: 0;
   border: 4px solid transparent;
-  border-top-color: var(--clr-primary);
   position: absolute;
+}
+
+nav a[title='About']::before {
+  border-top-color: var(--clr-primary);
   bottom: -70%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+.sub-menu::before {
+  border-bottom-color: var(--clr-primary);
+  top: -10%;
+  left: 20%;
+}
+
+.menu-list > a:hover ~ .sub-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-30px);
+}
+
+nav .menu-list:first-child a {
+  color: var(--clr-primary);
 }
 
 .menu-toggle {
@@ -474,9 +484,7 @@ nav a[title='About']::before {
   height: 4px;
   border-radius: 4px;
   position: relative;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all .3s;
   background-color: var(--clr-white);
   text-indent: -99999px;
 }
@@ -489,9 +497,7 @@ nav a[title='About']::before {
   border-radius: inherit;
   position: absolute;
   left: 0;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all .3s;
   background-color: inherit;
 }
 
@@ -572,10 +578,6 @@ nav a[title='About']::before {
 }
 
 .banner-content ul {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-  -ms-flex-preferred-size: 68%;
   flex-basis: 68%;
 }
 
@@ -830,27 +832,28 @@ nav a[title='About']::before {
 
 .fresh-card ul,
 .learning-card ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  margin-bottom: 20px;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 20px;
+  gap: 23px;
   color: var(--clr-grey1);
   font-weight: 600;
 }
 
-.learning-card ul { padding: 0 0 0 15%; }
+.learning-card {
+  padding: 0 0 0 7.4%;
+}
 
-.fresh-card>ul li:nth-child(2)::before,
-.fresh-card>ul li:nth-child(4)::before,
-.fresh-card>ul li:nth-child(5)::before,
-.fresh-card>ul li:nth-child(6)::before,
-.learning-card>ul li:nth-child(2)::before,
-.learning-card>ul li:nth-child(3)::before,
-.learning-card>ul li:nth-child(4)::before {
+.fresh-card > ul li:nth-child(1)::before,
+.fresh-card > ul li:nth-child(3)::before,
+.fresh-card > ul li:nth-child(4)::before,
+.fresh-card > ul li:nth-child(5)::before,
+.learning-card > ul li:nth-child(1)::before,
+.learning-card > ul li:nth-child(2)::before,
+.learning-card > ul li:nth-child(3)::before {
   content: '\f013';
   margin-right: 20px;
   color: var(--clr-white);
@@ -859,28 +862,31 @@ nav a[title='About']::before {
 }
 
 .fresh-card ul {
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
   color: var(--clr-white);
 }
 
-.fresh-card ul li:first-child,
-.learning-card ul li:first-child {
-  margin-bottom: 8px;
+.fresh-card h3,
+.learning-card h3 {
+  margin-bottom: 35px;
   color: var(--clr-white);
   font-size: 32px;
   font-weight: 600;
 }
 
-.fresh-learning-cards>li .button {
+.learning-card > ul li:last-child {
+  line-height: 1.5;
+}
+
+.fresh-learning-cards > li .button {
   padding: 14px 15px;
   border: 2px solid var(--clr-white);
   margin-top: 5px;
   color: var(--clr-white);
 }
 
-.fresh-card li .button { margin-top: 21px; }
-.learning-card>ul li:nth-child(5) { line-height: 1.5; }
+.fresh-card .button-div .button {
+  margin-top: 21px;
+}
 
 /* fresh-learning section ends here */
 
@@ -902,11 +908,6 @@ nav a[title='About']::before {
 
 .client .client-cards {
   width: 95%;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1025,9 +1026,7 @@ nav a[title='About']::before {
 .input-control input {
   padding: 14px 28px;
   border: none;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all .3s;
   background-color: var(--clr-primary);
   color: var(--clr-white);
   font-size: 18px;
@@ -1149,37 +1148,36 @@ footer .wrapper {
   justify-content: space-between;
 }
 
-.footer-left p {
-  margin: 22px 0 9px;
+.footer-left .footer-left-content {
+  margin: 35px 0 21px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
   color: var(--clr-white);
   font-size: 13px;
 }
 
-.footer-left p a {
-  margin-right: 2px;
-  color: var(--clr-white);
-  font-size: 32px;
-  font-weight: 600;
-  text-transform: uppercase;
+.footer-social {
+  gap: 20px;
 }
-
-.footer-social { gap: 20px; }
 
 .footer-social li a {
   width: 30px;
   height: 30px;
   color: var(--clr-primary);
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .footer-social li:nth-child(1) a::before { content: '\f2ad'; }
-.footer-right { overflow: hidden; }
-.footer-right a { width: 100%; }
 
-.footer-right img {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+.footer-right {
+  height: 214px;
+  flex-basis: 48.6%;
+}
+
+.footer-right iframe {
+  width: 100%;
+  height: 100%;
 }
 
 /*=================================
@@ -1197,16 +1195,8 @@ footer .wrapper {
     color: var(--clr-white);
   }
 
-  header a[title='Haber']:hover img,
-  .footer-right a:hover img {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-
   nav a:hover,
-  .header-social a:hover::before,
-  .footer-left p a:hover {
+  .header-social a:hover::before {
     color: var(--clr-primary);
   }
 
@@ -1246,15 +1236,25 @@ footer .wrapper {
 
   /* Header styling starts here */
 
-  header a[title='Haber'] { padding: 20px; }
-  nav a { margin-right: 15px; }
-  .header-social { gap: 9px; }
+  header h1 {
+    width: 180px;
+  }
+
+  nav .menu-list {
+    margin-right: 15px;
+  }
+
+  .header-social {
+    gap: 9px;
+  }
 
   /* Header styling ends here */
 
   /* banner section styling starts here */
 
-  .banner .wrapper { height: 85vh; }
+  .banner .wrapper {
+    height: 86.9vh;
+  }
 
   .banner-content {
     width: 70%;
@@ -1278,8 +1278,13 @@ footer .wrapper {
 
   /* fresh-learning section starts here */
 
-  .learning-card ul { padding: 0 0 0 6%; }
-  .fresh-card li .button { margin-top: 45px; }
+  .learning-card {
+    padding: 0 0 0 4%;
+  }
+
+  .fresh-card .button-div .button {
+    margin-top: 60px;
+  }
 
   /* fresh-learning section ends here */
 
@@ -1345,8 +1350,8 @@ footer .wrapper {
     background-color: var(--clr-grey3);
   }
 
-  header a[title='Haber'] {
-    padding: 10px;
+  header h1 {
+    width: 120px;
     z-index: 5;
   }
 
@@ -1366,9 +1371,7 @@ footer .wrapper {
     top: 0;
     left: -100%;
     z-index: 4;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
+    transition: all .3s;
     background-color: var(--clr-grey3);
     text-align: center;
   }
@@ -1380,8 +1383,11 @@ footer .wrapper {
 
   nav li:first-child a { color: var(--clr-white); }
 
-  nav ul a {
+  nav .menu-list {
     margin-right: 0;
+  }
+
+  nav ul a {
     font-size: 24px;
   }
 
@@ -1397,9 +1403,8 @@ footer .wrapper {
   }
 
   .header-social {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
+    padding: 4px;
+    border-radius: 5px;
     flex-direction: column;
     position: fixed;
     top: 50%;
@@ -1408,11 +1413,11 @@ footer .wrapper {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.7);
   }
 
-  .header-social li a {
+  nav .menu-list:first-child a {
     color: var(--clr-white);
-    text-shadow: 0 0 3px var(--clr-primary);
   }
 
   .menu-toggle {
@@ -1426,7 +1431,9 @@ footer .wrapper {
 
   /* banner section styling starts here */
 
-  .banner .wrapper { height: 89vh; }
+  .banner .wrapper {
+    height: 92vh;
+  }
 
   .banner-content {
     width: 80%;
@@ -1447,11 +1454,17 @@ footer .wrapper {
   }
 
   .focus-cards li {
-    -ms-flex-preferred-size: 90%;
+    padding: 25px 0;
     flex-basis: 90%;
   }
 
-  .focus-cards h3 { width: 100%; }
+  .focus-cards li:not(:last-child) {
+    border-bottom: 2px solid var(--clr-grey3);
+  }
+
+  .focus-cards h3 {
+    width: 100%;
+  }
 
   /* our-focus section ends here */
 
@@ -1496,13 +1509,18 @@ footer .wrapper {
     flex-basis: 100%;
   }
 
-  .fresh-card ul li:first-child,
-  .learning-card ul li:first-child {
-    font-size: 23px;
+  .fresh-card h3,
+  .learning-card h3 {
+    font-size: 26px;
   }
 
-  .learning-card ul { padding: 0; }
-  .fresh-card li .button { margin-top: 9px; }
+  .learning-card {
+    padding: 0;
+  }
+
+  .fresh-card .button-div .button {
+    margin-top: 9px;
+  }
 
   /* fresh-learning section ends here */
 
@@ -1569,17 +1587,18 @@ footer .wrapper {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
   }
 
-  .footer-left p,
+  .footer-left .footer-left-content,
   .footer-right {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
   }
 
-  .footer-left p { margin: 0; }
-  .footer-left p a { font-size: 22px; }
+  .footer-left .footer-left-content {
+      margin: 0 0 21px;
+  }
 
   /* footer styling ends here */
 
