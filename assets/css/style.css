@@ -90,7 +90,7 @@ body {
 a { 
   display: inline-block;
   text-decoration: none; 
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 li {
@@ -183,7 +183,7 @@ p {
   position: absolute;
   top: 0;
   transform: translatex(-50%);
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .client .prev::before,
@@ -219,7 +219,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: all 0.3s;
+  transition: all .3s;
   font-family: 'fontAwesome';
   text-indent: 0;
 }
@@ -294,6 +294,7 @@ nav a {
 
 .menu-list .sub-menu {
   width: 100px;
+  visibility: hidden;
   position: absolute;
   top: 100px;
   left: 0;
@@ -330,7 +331,8 @@ nav a[title='About']::before {
   left: 20%;
 }
 
-.menu-list:hover .sub-menu {
+.menu-list > a:hover ~ .sub-menu {
+  visibility: visible;
   opacity: 1;
   transform: translateY(-30px);
 }
@@ -353,7 +355,7 @@ nav .menu-list:first-child a {
   height: 4px;
   border-radius: 4px;
   position: relative;
-  transition: all 0.3s;
+  transition: all .3s;
   background-color: var(--clr-white);
   text-indent: -99999px;
 }
@@ -366,7 +368,7 @@ nav .menu-list:first-child a {
   border-radius: inherit;
   position: absolute;
   left: 0;
-  transition: all 0.3s;
+  transition: all .3s;
   background-color: inherit;
 }
 
@@ -822,7 +824,7 @@ nav .menu-list:first-child a {
 .input-control input {
   padding: 14px 28px;
   border: none;
-  transition: all 0.3s;
+  transition: all .3s;
   background-color: var(--clr-primary);
   color: var(--clr-white);
   font-size: 18px;
@@ -1170,7 +1172,7 @@ footer .wrapper {
     top: 0;
     left: -100%;
     z-index: 4;
-    transition: all 0.3s;
+    transition: all .3s;
     background-color: var(--clr-grey3);
     text-align: center;
   }
