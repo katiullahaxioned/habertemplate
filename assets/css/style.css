@@ -421,9 +421,7 @@ nav .nav-menu,
   position: relative;
 }
 
-nav .menu-list {
-  margin-right: 31px;
-}
+nav .menu-list { margin-right: 31px; }
 
 nav a {
   color: var(--clr-white);
@@ -867,17 +865,10 @@ nav .menu-list:first-child a {
   font-weight: 600;
 }
 
-.learning-card {
-  padding: 0 0 0 7.4%;
-}
+.learning-card { padding: 0 0 0 7.4%; }
 
-.fresh-card > ul li:nth-child(1)::before,
-.fresh-card > ul li:nth-child(3)::before,
-.fresh-card > ul li:nth-child(4)::before,
-.fresh-card > ul li:nth-child(5)::before,
-.learning-card > ul li:nth-child(1)::before,
-.learning-card > ul li:nth-child(2)::before,
-.learning-card > ul li:nth-child(3)::before {
+.fresh-card > ul li:not(:nth-child(2))::before,
+.learning-card > ul li:not(:nth-child(4))::before {
   content: '\f013';
   margin-right: 20px;
   color: var(--clr-white);
@@ -885,9 +876,7 @@ nav .menu-list:first-child a {
   text-indent: 0;
 }
 
-.fresh-card ul {
-  color: var(--clr-white);
-}
+.fresh-card ul { color: var(--clr-white); }
 
 .fresh-card h3,
 .learning-card h3 {
@@ -897,9 +886,7 @@ nav .menu-list:first-child a {
   font-weight: 600;
 }
 
-.learning-card > ul li:last-child {
-  line-height: 1.5;
-}
+.learning-card > ul li:last-child { line-height: 1.5; }
 
 .fresh-learning-cards > li .button {
   padding: 14px 15px;
@@ -908,9 +895,7 @@ nav .menu-list:first-child a {
   color: var(--clr-white);
 }
 
-.fresh-card .button-div .button {
-  margin-top: 21px;
-}
+.fresh-card .button-div .button { margin-top: 21px; }
 
 /* fresh-learning section ends here */
 
@@ -1189,9 +1174,7 @@ footer .wrapper {
   font-size: 13px;
 }
 
-.footer-social {
-  gap: 20px;
-}
+.footer-social { gap: 20px; }
 
 .footer-social li a {
   width: 30px;
@@ -1269,25 +1252,15 @@ footer .wrapper {
 
   /* Header styling starts here */
 
-  header h1 {
-    width: 180px;
-  }
-
-  nav .menu-list {
-    margin-right: 15px;
-  }
-
-  .header-social {
-    gap: 9px;
-  }
+  header h1 { width: 180px; }
+  nav .menu-list { margin-right: 15px; }
+  .header-social { gap: 9px; }
 
   /* Header styling ends here */
 
   /* banner section styling starts here */
 
-  .banner .wrapper {
-    height: 86.9vh;
-  }
+  .banner .wrapper { height: 86.9vh; }
 
   .banner-content {
     width: 70%;
@@ -1311,13 +1284,8 @@ footer .wrapper {
 
   /* fresh-learning section starts here */
 
-  .learning-card {
-    padding: 0 0 0 4%;
-  }
-
-  .fresh-card .button-div .button {
-    margin-top: 60px;
-  }
+  .learning-card { padding: 0 0 0 4%; }
+  .fresh-card .button-div .button { margin-top: 60px; }
 
   /* fresh-learning section ends here */
 
@@ -1417,14 +1385,8 @@ footer .wrapper {
   }
 
   nav li:first-child a { color: var(--clr-white); }
-
-  nav .menu-list {
-    margin-right: 0;
-  }
-
-  nav ul a {
-    font-size: 24px;
-  }
+  nav .menu-list { margin-right: 0; }
+  nav ul a { font-size: 24px; }
 
   nav a[title='About']::before {
     border-top-color: transparent;
@@ -1454,9 +1416,7 @@ footer .wrapper {
     background-color: rgba(0,0,0,0.7);
   }
 
-  nav .menu-list:first-child a {
-    color: var(--clr-white);
-  }
+  nav .menu-list:first-child a { color: var(--clr-white); }
 
   .menu-toggle {
     display: block;
@@ -1469,9 +1429,7 @@ footer .wrapper {
 
   /* banner section styling starts here */
 
-  .banner .wrapper {
-    height: 92vh;
-  }
+  .banner .wrapper { height: 92vh; }
 
   .banner-content {
     width: 80%;
@@ -1497,13 +1455,8 @@ footer .wrapper {
         flex-basis: 90%;
   }
 
-  .focus-cards li:not(:last-child) {
-    border-bottom: 2px solid var(--clr-grey3);
-  }
-
-  .focus-cards h3 {
-    width: 100%;
-  }
+  .focus-cards li:not(:last-child) { border-bottom: 2px solid var(--clr-grey3); }
+  .focus-cards h3 { width: 100%; }
 
   /* our-focus section ends here */
 
@@ -1553,13 +1506,8 @@ footer .wrapper {
     font-size: 26px;
   }
 
-  .learning-card {
-    padding: 0;
-  }
-
-  .fresh-card .button-div .button {
-    margin-top: 9px;
-  }
+  .learning-card { padding: 0; }
+  .fresh-card .button-div .button { margin-top: 9px; }
 
   /* fresh-learning section ends here */
 
@@ -1635,9 +1583,7 @@ footer .wrapper {
     flex-basis: 100%;
   }
 
-  .footer-left .footer-left-content {
-      margin: 0 0 21px;
-  }
+  .footer-left .footer-left-content { margin: 0 0 21px; }
 
   /* footer styling ends here */
 
